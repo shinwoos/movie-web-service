@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    function Title() {
+      return (
+        <h3
+          key="title"
+          id="title"
+          onMouseEnter={() => console.log("mouse enter")}
+        >
+          hello im title
+        </h3>
+      );
+    }
+    const Button = () => (
+      <button
+        key="button"
+        style={{ backgroundColor: "tomato" }}
+        onClick={() => console.log("im click")}
+      >
+        click me
+      </button>
+    );
+
+    const Container = <div>TitleButton</div>;
+    ReactDOM.render(Container, root);
+  </script>
+</html>
